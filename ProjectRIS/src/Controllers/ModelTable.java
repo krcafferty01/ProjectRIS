@@ -1,8 +1,9 @@
 package Controllers;
 
 public class ModelTable {
-	String username,displayName,email,role;
+	String username,displayName,email,role,patient,referralMD,modality,notes,status;
 	int ID;
+	int orderID;
 
 	public ModelTable(int ID, String username, String displayName, String email, String role) {
 		super();
@@ -20,6 +21,15 @@ public class ModelTable {
 		this.email = email;
 		this.role = role;
 		this.ID = iD;
+	}
+	public ModelTable(int orderID, String patient, String referralMD, String modality, String notes, String status) {
+		super();
+		this.orderID = orderID;
+		this.patient = patient;
+		this.referralMD = referralMD;
+		this.modality = modality;
+		this.notes = notes;
+		this.status = status;
 	}
 	public int getID() {
 		return ID;
