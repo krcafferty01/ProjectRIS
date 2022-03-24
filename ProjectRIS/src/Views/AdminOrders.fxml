@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1460.0" prefWidth="750.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="Controllers.AdminController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1460.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.AdminController">
    <center>
       <AnchorPane prefHeight="1460.0" prefWidth="600.0" style="-fx-background-color: gray;" BorderPane.alignment="CENTER">
          <children>
@@ -63,12 +63,14 @@
                      </font>
                   </Label>
                   <Line id="allOrdersCosmeticLine" endX="422.29852294921875" layoutX="286.0" layoutY="50.0" startX="-269.0" startY="-1.52587890625E-5" />
-                  <TableView layoutX="15.0" layoutY="96.0" prefHeight="199.0" prefWidth="694.0">
+                  <TableView fx:id="allOrdersTable" layoutX="15.0" layoutY="96.0" prefHeight="199.0" prefWidth="694.0">
                     <columns>
-                      <TableColumn id="allOrdersPatientCol" prefWidth="137.5" text="Patient" />
-                      <TableColumn id="allOrdersModalityCol" prefWidth="137.5" text="Modality" />
-                        <TableColumn id="allOrdersNotesCol" prefWidth="137.5" text="Notes" />
-                        <TableColumn id="allOrdersStatusCol" prefWidth="137.5" text="Status" />
+                      <TableColumn id="allOrdersIdCol" fx:id="orderIDCol" prefWidth="102.0" text="Order ID" />
+                        <TableColumn id="allOrdersPatientCol" fx:id="patientCol" prefWidth="121.0" text="Patient" />
+                        <TableColumn id="allOrdersMDCol" fx:id="referralMDCol" prefWidth="117.0" text="Referral MD" />
+                        <TableColumn id="allOrdersModalityCol" fx:id="modalityCol" minWidth="0.0" prefWidth="82.0" text="Modality" />
+                        <TableColumn id="allOrdersNotesCol" fx:id="notesCol" prefWidth="213.0" text="Notes" />
+                        <TableColumn id="allOrdersStatusCol" fx:id="statusCol" prefWidth="57.0" text="Status" />
                     </columns>
                   </TableView>
                   <TextField id="searchAllOrdersTextField" layoutX="554.0" layoutY="58.0" prefHeight="26.0" prefWidth="155.0" />
@@ -77,6 +79,7 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
+                  <Button layoutX="604.0" layoutY="14.0" mnemonicParsing="false" onAction="#NewOrderButton" text="Place New Order" />
                </children>
             </Pane>
             <Button fx:id="OrderButton" layoutX="354.0" layoutY="14.0" mnemonicParsing="false" onAction="#OrderButton" style="-fx-background-color: white;" text="Orders" textFill="#462323">
